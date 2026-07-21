@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth & Profit Calculator — Industrial Cigar Co.</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <img class="nav-logo" src="images/logo-white.png" alt="Industrial Cigar Co.">
+  <a class="nav-link" href="index.html">Home</a>
+  <a class="nav-link" href="story.html">Story</a>
+  <a class="nav-link" href="business.html">Business</a>
+  <a class="nav-link" href="systems.html">Systems</a>
+  <a class="nav-link" href="accomplishments.html">Accomplishments</a>
+  <a class="nav-link" href="roadmap.html">Roadmap</a>
+  <a class="nav-link active" href="calculator.html">Calculator</a>
+</nav>
+
+<div class="page-header">
+  <p class="eyebrow">Growth &amp; Profit Calculator</p>
+  <h1>Model it yourself</h1>
+  <p class="lede">Every lever below is built from real 2025/2026 operating data &mdash; not illustrative guesses. Section one reflects what's already being tracked weekly. Section two is what a new owner hasn't touched yet.</p>
+</div>
+
+<main>
+<section>
+  <div class="sticky-summary">
+    <div class="summary">
+      <div class="card"><p class="c-label">Projected revenue</p><p class="c-value" id="out-rev">$2,129,134</p></div>
+      <div class="card"><p class="c-label">Projected overhead</p><p class="c-value" id="out-oh">$1,010,456</p></div>
+      <div class="card profit"><p class="c-label">Projected annual profit</p><p class="c-value" id="out-profit">$250,803</p></div>
+    </div>
+    <p class="footnote">Baseline: 2025 actuals. Category sliders start from 2026 YTD run-rate. Cigar margin 53.5% (2.15x cost multiple), food 45% (labor and COGS factored in), bar 65% (35% COGS). Overhead scales with cigar and bar volume via current labor ratios; food margin already nets out labor.</p>
+  </div>
+
+  <div class="calc-group">
+    <h3>1. Building on current efforts</h3>
+    <p class="subhead">Already tracked on the weekly scorecard</p>
+
+    <div class="control">
+      <div class="control-top"><label>Cigar sales growth <span class="baseline">(baseline $1,246,084/yr)</span></label><span class="out" id="l1-out">0%</span></div>
+      <input type="range" min="0" max="30" step="5" value="0" id="l1">
+    </div>
+    <div class="control">
+      <div class="control-top"><label>Cigar staff average ticket target</label><span class="out" id="l2-out">$43.76</span></div>
+      <input type="range" min="43.76" max="49" step="0.25" value="43.76" id="l2">
+      <p class="note">Current blended average across the four cigar specialists: $43.76</p>
+    </div>
+    <div class="control">
+      <div class="control-top"><label>Food sales growth <span class="baseline">(baseline $41,858/yr)</span></label><span class="out" id="l3-out">0%</span></div>
+      <input type="range" min="0" max="50" step="5" value="0" id="l3">
+    </div>
+    <div class="control">
+      <div class="control-top"><label>Bar sales growth <span class="baseline">(baseline $425,576/yr, incl. bottle concierge)</span></label><span class="out" id="l4-out">0%</span></div>
+      <input type="range" min="0" max="30" step="5" value="0" id="l4">
+      <p class="note">Bottle concierge currently runs ~$219/wk inside this bar total, not a separate stream.</p>
+    </div>
+    <div class="control">
+      <div class="control-top"><label>Private lounge rentals per month <span class="baseline">(baseline 1/quarter, $2,345 avg)</span></label><span class="out" id="l6-out">0.33/mo</span></div>
+      <input type="range" min="0.33" max="8" step="0.33" value="0.33" id="l6">
+    </div>
+    <div class="control">
+      <div class="control-top"><label>New Atabey members per week <span class="baseline">(baseline 132 active members)</span></label><span class="out" id="l7-out">0</span></div>
+      <input type="range" min="0" max="3" step="0.5" value="0" id="l7">
+    </div>
+  </div>
+
+  <div class="calc-group">
+    <h3>2. Roadmap to success</h3>
+    <p class="subhead">Not currently capitalized on &mdash; available to a new ownership team</p>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="l8">
+      <label for="l8">Introduce $500 initiation fee on new Atabey/Apex members <span class="baseline">(baseline $0)</span></label>
+    </div>
+    <div class="control">
+      <div class="control-top"><label>Guest pass fee enforcement <span class="baseline">(baseline $0/wk collected)</span></label><span class="out" id="l9-out">0%</span></div>
+      <input type="range" min="0" max="100" step="5" value="0" id="l9">
+    </div>
+    <div class="control">
+      <div class="control-top"><label>Membership minimum spend policy <span class="baseline">(baseline: no minimum set)</span></label><span class="out" id="l10-out">$0/mo</span></div>
+      <input type="range" min="0" max="300" step="25" value="0" id="l10">
+      <p class="note" id="l10-note">Members below this monthly threshold get auto-charged the difference. Includes new members from the growth slider above, assumed at $0 in-lounge spend.</p>
+    </div>
+    <div class="control">
+      <div class="control-top"><label>Annual maintenance assessment <span class="baseline">(baseline $0/member)</span></label><span class="out" id="l11-out">$0/member</span></div>
+      <input type="range" min="0" max="500" step="25" value="0" id="l11">
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="l12">
+      <label for="l12">Remove current owner pay <span class="baseline">(baseline overhead includes ~$235,000/yr owner compensation)</span></label>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Industrial Cigar Co. &mdash; prepared for prospective ownership review. Figures modeled from 2025 actuals and 2026 YTD operating data.</footer>
+
+<script>
+const baseRev = 2129134;
+const baseOverhead = 1010456;
+const baseGross = 1261259;
+const baseTicket = 43.76;
+const annualTxns = 19317;
+const cigarMargin = 0.535;
+const foodMargin = 0.45;
+const barMargin = 0.65;
+const cigarLaborRatio = 0.05433;
+const barLaborRatio = 0.12097;
+const memberMonthlyAvgs = [143.4,803.7,223.7,452.64,88.08,756.22,452.53,1034.8,433.83,692.32,408.35,324.12,833.03,211.7,343.13,153.17,32.23,165.67,337.68,913.54,253.9,958.68,191.23,205.48,187.98,383.85,70.43,323.58,221.6,256.49,321.08,860.83,36.09,316.39,219.13,375.0,360.7,57.68,474.72,379.17,61.97,30.24,32.24,6.86,1.83,280.32,30.15,47.91,63.62,139.58,121.8,214.37,586.58,301.12,144.84,119.73,161.81,270.41,33.53,286.57,1791.38,202.14,170.39,108.49,183.92,10.43,4.07,143.31,33.72,243.0,419.89,148.01,700.82,347.76,19.12,85.07,100.91,194.64,95.64,237.88,66.39,347.35,176.45,138.17,155.85,164.31,104.91,137.25,207.03,304.85,622.36,304.55,94.89,456.51,57.32,14.55,68.51,81.94,128.96,62.85,102.82,29.38,22.26,97.12,3.15,235.85,12.19,22.49,271.88,7.76,76.11,30.64,23.79,52.7,31.91,17.37,140.68,114.66,20.28,116.37,28.08,6.86,5.11];
+
+function fmt(n){ return '$' + Math.round(n).toLocaleString(); }
+
+function existingMemberGap(threshold){
+  let monthlyGap = 0;
+  for (const avg of memberMonthlyAvgs){
+    if (avg < threshold) monthlyGap += (threshold - avg);
+  }
+  return monthlyGap * 12;
+}
+
+function calc(){
+  const v1 = parseFloat(document.getElementById('l1').value);
+  const v2 = parseFloat(document.getElementById('l2').value);
+  const v3 = parseFloat(document.getElementById('l3').value);
+  const v4 = parseFloat(document.getElementById('l4').value);
+  const v6 = parseFloat(document.getElementById('l6').value);
+  const v7 = parseFloat(document.getElementById('l7').value);
+  const v8 = document.getElementById('l8').checked;
+  const v9 = parseFloat(document.getElementById('l9').value);
+  const v10 = parseFloat(document.getElementById('l10').value);
+  const v11 = parseFloat(document.getElementById('l11').value);
+  const v12 = document.getElementById('l12').checked;
+
+  document.getElementById('l1-out').textContent = v1 + '%';
+  document.getElementById('l2-out').textContent = '$' + v2.toFixed(2);
+  document.getElementById('l3-out').textContent = v3 + '%';
+  document.getElementById('l4-out').textContent = v4 + '%';
+  document.getElementById('l6-out').textContent = v6.toFixed(2) + '/mo';
+  document.getElementById('l7-out').textContent = v7;
+  document.getElementById('l9-out').textContent = v9 + '%';
+  document.getElementById('l10-out').textContent = '$' + v10 + '/mo';
+  document.getElementById('l11-out').textContent = '$' + v11 + '/member';
+
+  const newMembersPerMonth = v7 * 4.33;
+  const newMemberMinSpendGap = newMembersPerMonth * 78 * v10;
+  const minSpendAdd = existingMemberGap(v10) + newMemberMinSpendGap;
+
+  const membersBelow = memberMonthlyAvgs.filter(a => a < v10).length;
+  document.getElementById('l10-note').textContent = membersBelow + ' of 123 existing members plus new signups fall below $' + v10 + '/mo, generating ' + fmt(minSpendAdd) + '/yr total.';
+
+  const cigarRevAdd = 1246084 * (v1/100);
+  const cigarProfitAdd = cigarRevAdd * cigarMargin;
+
+  const ticketRevAdd = (v2 - baseTicket) * annualTxns;
+  const ticketProfitAdd = ticketRevAdd * cigarMargin;
+
+  const foodRevAdd = 41858 * (v3/100);
+  const foodProfitAdd = foodRevAdd * foodMargin;
+
+  const barRevAdd = 425576 * (v4/100);
+  const barProfitAdd = barRevAdd * barMargin;
+
+  const rentalAdd = v6 * 2345 * 12;
+
+  const newMemberProfitAdd = newMembersPerMonth * 78 * 150 / 12 * 12;
+
+  const newMembersPerYear = v7 * 52;
+  const initFeeAdd = v8 ? newMembersPerYear * 500 : 0;
+
+  const guestPassAdd = (v9/100) * 420 * 52;
+  const maintenanceAdd = v11 * 132;
+
+  const revenueDelta = cigarRevAdd + ticketRevAdd + foodRevAdd + barRevAdd + rentalAdd + newMemberProfitAdd + initFeeAdd + guestPassAdd + minSpendAdd + maintenanceAdd;
+  const profitDelta = cigarProfitAdd + ticketProfitAdd + foodProfitAdd + barProfitAdd + rentalAdd + newMemberProfitAdd + initFeeAdd + guestPassAdd + minSpendAdd + maintenanceAdd;
+
+  const overheadDelta = (cigarRevAdd * cigarLaborRatio) + (barRevAdd * barLaborRatio);
+  const overhead = baseOverhead - (v12 ? 235000 : 0) + overheadDelta;
+  const profit = baseGross + profitDelta - overhead;
+
+  document.getElementById('out-rev').textContent = fmt(baseRev + revenueDelta);
+  document.getElementById('out-oh').textContent = fmt(overhead);
+  document.getElementById('out-profit').textContent = fmt(profit);
+}
+
+['l1','l2','l3','l4','l6','l7','l9','l10','l11'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calc);
+});
+['l8','l12'].forEach(id => {
+  document.getElementById(id).addEventListener('change', calc);
+});
+calc();
+</script>
+
+</body>
+</html>
