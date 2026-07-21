@@ -222,9 +222,43 @@ input[type=range] { width: 100%; accent-color: var(--icc-red); height: 4px; }
 .checkbox-row input { accent-color: var(--icc-red); width: 16px; height: 16px; }
 .checkbox-row .baseline { color: var(--icc-muted); font-size: 12px; }
 
+/* Alternating image+text sections */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin: 52px 0; }
+.split .split-media .fig { margin: 0; }
+.split .split-media img { width: 100%; display: block; border-radius: 2px; }
+.split.reverse .split-media { order: 2; }
+
+/* Scroll-triggered reveal */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s cubic-bezier(0.22,0.61,0.36,1), transform 0.9s cubic-bezier(0.22,0.61,0.36,1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Platform visualization cards */
+.platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 0 0 24px; }
+.platform-card { background: var(--icc-card-bg); border: 1px solid var(--icc-border); border-top: 2px solid var(--icc-red); padding: 20px 18px; }
+.platform-card svg { width: 26px; height: 26px; color: var(--icc-red); margin-bottom: 14px; display: block; }
+.platform-card h4 { font-family: 'Industry Bold', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--icc-ink); margin: 0 0 8px; }
+.platform-card p { font-family: Georgia, serif; font-size: 13.5px; color: var(--icc-body); margin: 0; }
+
+/* Drive / external link button */
+.btn-drive {
+  display: inline-block;
+  font-family: 'Industry Bold', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--icc-ink);
+  padding: 14px 24px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.btn-drive:hover { background: var(--icc-red); }
+
 @media (max-width: 640px) {
   nav { gap: 14px; padding: 0 16px; overflow-x: auto; }
   .hero h1, .page-header h1 { font-size: 28px; }
   .summary { grid-template-columns: 1fr; }
   .fig.two-col { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; gap: 18px; margin: 36px 0; }
+  .split.reverse .split-media { order: 0; }
 }
