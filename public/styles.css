@@ -299,3 +299,7 @@ input[type=range] { width: 100%; accent-color: var(--icc-red); height: 4px; }
 .stack-table th { text-align: left; font-family: 'Industry Medium', sans-serif; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--icc-muted); padding: 10px; border-bottom: 2px solid var(--icc-ink); }
 .stack-table td { padding: 14px 10px; border-bottom: 1px solid var(--icc-border); font-size: 14px; color: var(--icc-body); vertical-align: top; }
 .stack-table td.tool-name { font-family: 'Industry Bold', sans-serif; font-size: 14px; color: var(--icc-ink); white-space: nowrap; }
+
+/* Operating cost model callout */
+.model-note { background: var(--icc-card-bg); border-left: 3px solid var(--icc-red); padding: 16px 20px; margin: 16px 0 24px; font-size: 13px; color: var(--icc-muted); }
+.model-note strong { color: var(--icc-ink); }
