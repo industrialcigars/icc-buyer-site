@@ -285,3 +285,17 @@ input[type=range] { width: 100%; accent-color: var(--icc-red); height: 4px; }
 
 .btn-drive { display: inline-block; margin: 8px 0 24px; background: var(--icc-red); color: #fff; font-family: 'Industry Bold', sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 22px; text-decoration: none; }
 .btn-drive:hover { opacity: 0.9; }
+
+/* Platform cards (Systems page) */
+.platform-card { border: 1px solid var(--icc-border); border-left: 4px solid var(--icc-red); padding: 26px 28px; margin-bottom: 18px; }
+.platform-card .pc-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.platform-card .pc-num { font-family: 'Industry Bold', sans-serif; font-size: 13px; color: var(--icc-red); letter-spacing: 0.1em; }
+.platform-card h3 { font-family: 'Industry Bold', sans-serif; font-size: 22px; color: var(--icc-ink); text-transform: uppercase; margin: 6px 0 12px; }
+.platform-card p { font-size: 15px; color: var(--icc-body); margin: 0; }
+.platform-card .pc-status { font-family: 'Industry Medium', sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--icc-muted); background: var(--icc-card-bg); padding: 4px 10px; }
+
+/* Licensed stack table */
+.stack-table { width: 100%; border-collapse: collapse; margin: 10px 0 20px; }
+.stack-table th { text-align: left; font-family: 'Industry Medium', sans-serif; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--icc-muted); padding: 10px; border-bottom: 2px solid var(--icc-ink); }
+.stack-table td { padding: 14px 10px; border-bottom: 1px solid var(--icc-border); font-size: 14px; color: var(--icc-body); vertical-align: top; }
+.stack-table td.tool-name { font-family: 'Industry Bold', sans-serif; font-size: 14px; color: var(--icc-ink); white-space: nowrap; }
