@@ -21,6 +21,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+img { max-width: 100%; }
 body {
   margin: 0;
   background: var(--icc-bg);
@@ -242,12 +243,73 @@ input[type=range] { width: 100%; accent-color: var(--icc-red); height: 4px; }
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s cubic-bezier(0.22,0.61,0.36,1), transform 0.9s cubic-bezier(0.22,0.61,0.36,1); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-/* Platform visualization cards */
-.platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 0 0 24px; }
-.platform-card { background: var(--icc-card-bg); border: 1px solid var(--icc-border); border-top: 2px solid var(--icc-red); padding: 20px 18px; }
-.platform-card svg { width: 26px; height: 26px; color: var(--icc-red); margin-bottom: 14px; display: block; }
-.platform-card h4 { font-family: 'Industry Bold', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--icc-ink); margin: 0 0 8px; }
-.platform-card p { font-family: Georgia, serif; font-size: 13.5px; color: var(--icc-body); margin: 0; }
+/* Platform cards (systems.html) */
+.platform-card { background: var(--icc-card-bg); border: 1px solid var(--icc-border); border-top: 2px solid var(--icc-red); padding: 20px 22px; margin-bottom: 14px; }
+.platform-card .pc-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.platform-card .pc-num { font-family: 'Industry Bold', sans-serif; font-size: 12px; letter-spacing: 0.1em; color: var(--icc-muted); }
+.platform-card .pc-status { font-family: 'Industry Medium', sans-serif; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--icc-red); border: 1px solid var(--icc-red); padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+.platform-card h3 { font-size: 16px; margin: 0 0 8px; }
+.platform-card p { font-size: 14px; margin: 0; }
+
+/* Image + text teaser blocks (index, story, business, systems, accomplishments, roadmap) */
+.teaser { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin: 8px 0 40px; }
+.teaser img { width: 100%; height: 320px; object-fit: cover; display: block; border-radius: 2px; }
+.teaser h2 { font-size: 22px; margin: 0 0 10px; }
+.teaser p:last-child, .teaser ul:last-child { margin-bottom: 0; }
+section.teaser { margin: 0; }
+
+/* Homepage stat strip */
+.stat-strip { display: flex; flex-wrap: wrap; gap: 40px; }
+.stat-num { font-family: 'Industry Bold', sans-serif; font-size: 32px; color: var(--icc-ink); margin: 0 0 4px; }
+.stat-label { font-family: 'Industry Medium', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--icc-muted); margin: 0; }
+
+.link-cta { display: inline-block; font-family: 'Industry Bold', sans-serif; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--icc-red); text-decoration: none; }
+.link-cta:hover { text-decoration: underline; }
+
+/* Expandable year-by-year financial table (business.html) */
+table.year-table { width: 100%; border-collapse: collapse; font-family: 'Industry Medium', sans-serif; font-size: 14px; margin: 0 0 8px; }
+table.year-table th, table.year-table td { text-align: left; padding: 10px; border-bottom: 1px solid var(--icc-border); }
+table.year-table th { font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--icc-muted); }
+table.year-table td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--icc-ink); }
+tr.year-row { cursor: pointer; transition: background 0.15s ease; }
+tr.year-row:hover { background: var(--icc-card-bg); }
+.yr-toggle { display: inline-block; width: 16px; color: var(--icc-red); font-family: 'Industry Bold', sans-serif; }
+tr.year-detail { display: none; }
+tr.year-detail.open { display: table-row; }
+tr.year-detail td { padding: 14px 10px 20px; background: var(--icc-card-bg); border-bottom: 1px solid var(--icc-border); }
+.yd-label { font-family: 'Industry Medium', sans-serif; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--icc-muted); margin: 0 0 8px; }
+
+.model-note { background: var(--icc-card-bg); border-left: 3px solid var(--icc-red); padding: 16px 18px; font-family: Georgia, serif; font-size: 13.5px; color: var(--icc-body); margin: 16px 0 24px; }
+.model-note strong { color: var(--icc-ink); font-family: 'Industry Medium', sans-serif; font-style: normal; }
+
+/* Asset valuation breakdown (business.html) */
+.asset-stack { margin: 16px 0 20px; border: 1px solid var(--icc-border); }
+.asset-line { display: flex; justify-content: space-between; gap: 16px; padding: 12px 16px; border-bottom: 1px solid var(--icc-border); font-family: 'Industry Medium', sans-serif; font-size: 13.5px; }
+.asset-line:last-child { border-bottom: none; }
+.al-label { color: var(--icc-body); }
+.al-value { color: var(--icc-ink); font-family: 'Industry Bold', sans-serif; font-size: 13px; white-space: nowrap; text-align: right; }
+
+/* Licensed stack table (systems.html) */
+table.stack-table { width: 100%; border-collapse: collapse; font-family: 'Industry Medium', sans-serif; font-size: 14px; margin: 0 0 24px; }
+table.stack-table th, table.stack-table td { text-align: left; padding: 10px; border-bottom: 1px solid var(--icc-border); }
+table.stack-table th { font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--icc-muted); }
+table.stack-table .tool-name { font-family: 'Industry Bold', sans-serif; font-size: 13px; color: var(--icc-ink); }
+
+/* Story timeline slider */
+.timeline-wrap { margin: 20px 0 10px; }
+.timeline-slide { display: none; }
+.timeline-slide.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; animation: fadeIn 0.6s ease both; }
+.timeline-slide img { width: 100%; height: 380px; object-fit: cover; display: block; border-radius: 2px; }
+.ts-content h2 { font-size: 22px; margin: 0 0 10px; }
+.ts-content p { margin: 0; }
+.timeline-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; flex-wrap: wrap; gap: 14px; }
+.timeline-arrows { display: flex; gap: 8px; }
+.timeline-arrows button { width: 36px; height: 36px; border: 1px solid var(--icc-border); background: var(--icc-bg); color: var(--icc-ink); font-size: 16px; cursor: pointer; transition: border-color 0.2s ease, color 0.2s ease; }
+.timeline-arrows button:hover { border-color: var(--icc-red); color: var(--icc-red); }
+.timeline-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.timeline-nav button { background: none; border: none; padding: 0 0 4px; font-family: 'Industry Medium', sans-serif; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--icc-muted); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+.timeline-nav button:hover { color: var(--icc-ink); }
+.timeline-nav button.active { color: var(--icc-red); border-color: var(--icc-red); }
 
 /* Drive / external link button */
 .btn-drive {
@@ -272,4 +334,11 @@ input[type=range] { width: 100%; accent-color: var(--icc-red); height: 4px; }
   .fig.two-col { grid-template-columns: 1fr; }
   .split { grid-template-columns: 1fr; gap: 18px; margin: 36px 0; }
   .split.reverse .split-media { order: 0; }
+  .teaser { grid-template-columns: 1fr; gap: 18px; margin: 8px 0 32px; }
+  .teaser img { height: 220px; }
+  .stat-strip { gap: 24px 40px; }
+  .timeline-slide.active { grid-template-columns: 1fr; gap: 18px; }
+  .timeline-slide img { height: 220px; }
+  .asset-line { flex-direction: column; gap: 4px; }
+  .al-value { text-align: left; }
 }
