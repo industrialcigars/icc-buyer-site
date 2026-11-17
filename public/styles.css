@@ -13,7 +13,7 @@
   --icc-ink: #171717;
   --icc-red: #cc2026;
   --icc-bg: #ffffff;
-  --icc-card-bg: #f5f3ee;
+  --icc-card-bg: #f4f4f4;
   --icc-body: #3a3a38;
   --icc-muted: #767470;
   --icc-border: rgba(0,0,0,0.12);
@@ -326,6 +326,36 @@ table.stack-table .tool-name { font-family: 'Industry Bold', sans-serif; font-si
 }
 .btn-drive:hover { background: var(--icc-red); }
 
+/* Technology hub (systems.html) + system detail pages (system.html) */
+.tech-summary { padding: 24px 0 8px; border-bottom: none; margin-bottom: 8px; }
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 0 0 28px; }
+a.tech-card { display: flex; flex-direction: column; text-decoration: none; background: var(--icc-bg); border: 1px solid var(--icc-border); border-top: 2px solid var(--icc-red); padding: 18px 20px; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+a.tech-card:hover, a.tech-card:focus-visible { border-color: var(--icc-ink); border-top-color: var(--icc-red); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); outline: none; }
+a.tech-card .pc-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+a.tech-card .pc-num { font-family: 'Industry Bold', sans-serif; font-size: 12px; letter-spacing: 0.1em; color: var(--icc-muted); text-transform: uppercase; }
+a.tech-card .pc-status { font-family: 'Industry Medium', sans-serif; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--icc-red); border: 1px solid var(--icc-red); padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+a.tech-card h3 { font-size: 15px; margin: 0 0 8px; }
+a.tech-card p { font-size: 13.5px; margin: 0 0 16px; flex: 1; }
+.tech-card-foot { display: flex; justify-content: space-between; font-family: 'Industry Medium', sans-serif; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--icc-red); }
+
+.sys-page { padding: 56px 0 24px; }
+.sys-back { display: inline-block; font-family: 'Industry Medium', sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; margin-bottom: 24px; }
+.sys-back:hover { text-decoration: underline; }
+.sys-head .pc-top { display: flex; justify-content: flex-start; align-items: center; gap: 14px; margin-bottom: 14px; }
+.sys-head .pc-num { font-family: 'Industry Bold', sans-serif; font-size: 12px; letter-spacing: 0.1em; color: var(--icc-muted); text-transform: uppercase; }
+.sys-head .pc-status { font-family: 'Industry Medium', sans-serif; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--icc-red); border: 1px solid var(--icc-red); padding: 3px 9px; border-radius: 20px; }
+.sys-page h1 { font-size: 34px; margin: 0 0 10px; text-wrap: balance; }
+.sys-page .lede { max-width: 620px; }
+.sys-section { padding: 0 0 4px; border-bottom: none; }
+.sys-section:last-of-type { padding-bottom: 0; }
+.sys-stats { display: flex; flex-wrap: wrap; gap: 14px 40px; margin: 6px 0 20px; padding: 20px 22px; border: 1px solid var(--icc-border); border-top: 3px solid var(--icc-red); }
+.sys-stats .stat-num { font-size: 28px; }
+.sys-assumption { font-family: 'Industry Medium', sans-serif; font-size: 12px; line-height: 1.6; color: var(--icc-muted); }
+.sys-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 40px 0 0; padding-top: 24px; border-top: 1px solid var(--icc-border); }
+.sys-pager a { display: flex; flex-direction: column; gap: 4px; text-decoration: none; padding: 14px 16px; border: 1px solid var(--icc-border); font-family: 'Industry Bold', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--icc-ink); transition: border-color 0.2s ease; }
+.sys-pager a:hover { border-color: var(--icc-red); }
+.sys-pager a.next { text-align: right; }
+
 @media (max-width: 640px) {
   nav { gap: 14px; padding: 0 16px; overflow-x: auto; }
   .hero h1, .page-header h1 { font-size: 28px; }
@@ -340,5 +370,8 @@ table.stack-table .tool-name { font-family: 'Industry Bold', sans-serif; font-si
   .timeline-slide.active { grid-template-columns: 1fr; gap: 18px; }
   .timeline-slide img { height: 220px; }
   .asset-line { flex-direction: column; gap: 4px; }
+  .sys-page h1 { font-size: 26px; }
+  .sys-pager { grid-template-columns: 1fr; }
+  .sys-pager a.next { text-align: left; }
   .al-value { text-align: left; }
 }

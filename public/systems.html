@@ -42,55 +42,15 @@
   </div>
 
   <h3 class="block-title">Custom platforms</h3>
-  <p style="margin-bottom:24px;">Nine years of learning the tech stack the hard way produced eight purpose-built systems. Each one replaced a real, specific pain point &mdash; and each one is already built, tested, and running. This is the investment already made. A new owner isn't buying a plan to build these; they're buying the finished thing, ready to perform.</p>
+  <p style="margin-bottom:20px;">Nine years of learning the tech stack the hard way produced eight purpose-built systems. Each one replaced a real, specific pain point &mdash; and each one is already built, tested, and running. Pick any system to see the problem it solves, how it's automated, and what the manual version would cost in staff time.</p>
 
-  <div class="platform-card">
-    <div class="pc-top"><span class="pc-num">01</span><span class="pc-status">Live</span></div>
-    <h3>Programming OS</h3>
-    <p>Runs every event start to finish &mdash; bookings, staffing, run-of-show &mdash; all in one place. Before this existed, event season meant chasing details across texts and spreadsheets, with details falling through the cracks. Now it doesn't.</p>
-  </div>
+  <div class="stat-strip tech-summary" id="tech-summary"></div>
+  <div class="tech-grid" id="tech-grid-platform"></div>
 
-  <div class="platform-card">
-    <div class="pc-top"><span class="pc-num">02</span><span class="pc-status">Live</span></div>
-    <h3>ICCU &mdash; ICC Academy</h3>
-    <p>AI-powered training that gets every new hire to the ICC standard without pulling a manager off the floor to babysit onboarding. Consistency, without the labor cost of teaching the same thing over and over.</p>
-  </div>
-
-  <div class="platform-card">
-    <div class="pc-top"><span class="pc-num">03</span><span class="pc-status">Live</span></div>
-    <h3>Member Monthly Credit Cron</h3>
-    <p>Fully automated monthly retail credit &mdash; membership status flows straight to a redemption barcode with zero manual work. What used to be a recurring administrative task now runs itself, every month, without anyone remembering to do it.</p>
-  </div>
-
-  <div class="platform-card">
-    <div class="pc-top"><span class="pc-num">04</span><span class="pc-status">Live</span></div>
-    <h3>Pairing Passport</h3>
-    <p>QR-based system tracking member pairings, turning a single visit into an ongoing collection with real usage data behind it. Members get a reason to keep coming back; the business gets real data on what's actually being paired and enjoyed.</p>
-  </div>
-
-  <div class="platform-card">
-    <div class="pc-top"><span class="pc-num">05</span><span class="pc-status">Live</span></div>
-    <h3>Purchasing / OTB Calculator</h3>
-    <p>Live POS data drives exact order quantities and vendor purchase orders &mdash; not gut feel. The difference between "we think we need more of this" and "the data says exactly how much, from which vendor, this week."</p>
-  </div>
-
-  <div class="platform-card">
-    <div class="pc-top"><span class="pc-num">06</span><span class="pc-status">Live</span></div>
-    <h3>Guest Pass Program</h3>
-    <p>Automated guest tracking, Slack overage alerts, and welcome emails &mdash; no manual oversight required. Keeps the guest experience polished without anyone manually policing who came in on whose pass.</p>
-  </div>
-
-  <div class="platform-card">
-    <div class="pc-top"><span class="pc-num">07</span><span class="pc-status">In final build</span></div>
-    <h3>Marketing Command Center</h3>
-    <p>One place to plan, launch, and track marketing, with an AI agent helping execute campaigns instead of marketing living in someone's head or scattered across a dozen disconnected tools.</p>
-  </div>
-
-  <div class="platform-card">
-    <div class="pc-top"><span class="pc-num">08</span><span class="pc-status">In final build</span></div>
-    <h3>Bottle Concierge Pricing Tool</h3>
-    <p>Config-driven bar pricing engine applying tiered markup rules automatically across pour and concierge pricing &mdash; consistent margin, without someone doing the math by hand on every bottle.</p>
-  </div>
+  <h3 class="block-title">Also built</h3>
+  <p style="margin-bottom:20px;">Three more systems sit alongside the eight above and are not counted in the replacement-cost range.</p>
+  <div class="tech-grid" id="tech-grid-also"></div>
+  <p class="sys-assumption">Hours and dollar figures are modeled estimates of the manual work each system replaces, at an assumed fully-loaded hourly labor cost shown on each system's page. They are not tracked actuals.</p>
 
   <h3 class="block-title">Licensed stack in use</h3>
   <p style="margin-bottom:6px;">Best-in-class tools, already licensed and integrated &mdash; nothing here needs to be sourced or set up from scratch.</p>
@@ -115,6 +75,13 @@
 </main>
 
 <footer>Industrial Cigar Co. &mdash; prepared for prospective ownership review. Figures modeled from 2025 actuals and 2026 YTD operating data.</footer>
+
+<script src="tech-data.js"></script>
+<script>
+  iccRenderSummary('tech-summary');
+  iccRenderGrid('platform', 'tech-grid-platform');
+  iccRenderGrid('also', 'tech-grid-also');
+</script>
 
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Detail — Industrial Cigar Co.</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <img class="nav-logo" src="images/logo-white.png" alt="Industrial Cigar Co.">
+  <a class="nav-link" href="index.html">Home</a>
+  <a class="nav-link" href="story.html">Story</a>
+  <a class="nav-link" href="business.html">Business</a>
+  <a class="nav-link active" href="systems.html">Systems</a>
+  <a class="nav-link" href="accomplishments.html">Accomplishments</a>
+  <a class="nav-link" href="what-do-i-get.html">What Do I Get</a>
+  <a class="nav-link" href="roadmap.html">Roadmap</a>
+  <a class="nav-link" href="calculator.html">Calculator</a>
+  <a class="nav-cta" href="calculator.html">Run the numbers</a>
+</nav>
+
+<main>
+  <article id="sys-root" class="sys-page"></article>
+</main>
+
+<footer>Industrial Cigar Co. &mdash; prepared for prospective ownership review. Figures modeled from 2025 actuals and 2026 YTD operating data.</footer>
+
+<script src="tech-data.js"></script>
+<script>
+(function () {
+  var root = document.getElementById('sys-root');
+  var id = new URLSearchParams(location.search).get('id');
+  var t = iccFindTech(id);
+
+  if (!t) {
+    root.innerHTML = '<a class="sys-back" href="systems.html">&larr; All systems</a>' +
+      '<h1>System not found</h1><p>That system isn\'t in the list. <a href="systems.html">Return to Systems &amp; Infrastructure</a>.</p>';
+    return;
+  }
+
+  document.title = t.name + ' — Industrial Cigar Co.';
+
+  var list = ICC_TECH;
+  var i = list.indexOf(t);
+  var prev = list[(i - 1 + list.length) % list.length];
+  var next = list[(i + 1) % list.length];
+
+  var annual = iccAnnual(t);
+  var stats = '';
+  if (t.hoursPerMonth) {
+    stats =
+      '<section class="sys-section">' +
+        '<h3 class="block-title">The time and the cost</h3>' +
+        '<div class="sys-stats">' +
+          '<div><p class="stat-num">' + t.hoursPerMonth + ' hrs</p><p class="stat-label">est. manual work replaced each month</p></div>' +
+          '<div><p class="stat-num">' + iccMoney(annual) + '</p><p class="stat-label">est. a year in staff time</p></div>' +
+        '</div>' +
+        (t.specialist ? '<p>Doing this by hand would typically mean ' + t.specialist + ' carrying it, or pulling time from someone whose job is something else.</p>' : '') +
+        '<p class="sys-assumption">Modeled estimate, not tracked actuals: about ' + t.hoursPerMonth + ' hours a month at an assumed fully-loaded labor cost of ' + iccMoney(t.rate) + ' an hour. ' + t.basis + '</p>' +
+      '</section>';
+  }
+
+  root.innerHTML =
+    '<a class="sys-back" href="systems.html">&larr; All systems</a>' +
+    '<div class="sys-head">' +
+      '<div class="pc-top"><span class="pc-num">' + (t.num ? 'System ' + t.num : 'Also built') + '</span><span class="pc-status">' + t.status + '</span></div>' +
+      '<h1>' + t.name + '</h1>' +
+      '<p class="lede">' + t.tagline + '</p>' +
+    '</div>' +
+    '<section class="sys-section">' +
+      '<h3 class="block-title">The problem</h3>' +
+      '<p>' + t.problem + '</p>' +
+    '</section>' +
+    '<section class="sys-section">' +
+      '<h3 class="block-title">How it\'s automated</h3>' +
+      '<ul class="plain">' + t.does.map(function (d) { return '<li>' + d + '</li>'; }).join('') + '</ul>' +
+      '<p><strong>Replaces:</strong> ' + t.replaces + '</p>' +
+    '</section>' +
+    stats +
+    '<div class="sys-pager">' +
+      '<a href="system.html?id=' + prev.id + '"><span class="pc-num">&larr; Previous</span><span>' + prev.name + '</span></a>' +
+      '<a href="system.html?id=' + next.id + '" class="next"><span class="pc-num">Next &rarr;</span><span>' + next.name + '</span></a>' +
+    '</div>';
+})();
+</script>
+
+</body>
+</html>
