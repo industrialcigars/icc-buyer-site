@@ -78,11 +78,32 @@
       '<ul class="plain">' + t.does.map(function (d) { return '<li>' + d + '</li>'; }).join('') + '</ul>' +
       '<p><strong>Replaces:</strong> ' + t.replaces + '</p>' +
     '</section>' +
+    '<section class="sys-section demo-section" id="demo-section" hidden>' +
+      '<h3 class="block-title">Try it yourself</h3>' +
+      '<p class="demo-intro" id="demo-intro"></p>' +
+      '<div class="demo-frame"><div class="demo-bar"><span class="demo-dots"><i></i><i></i><i></i></span><span class="demo-title">' + t.name + '</span><span class="demo-tag">Sample data</span></div><div class="demo-body" id="demo-body"></div></div>' +
+      '<p class="sys-assumption">Interactive demo running on invented sample data. No real member, vendor, employee or financial records are shown, and nothing here connects to the live system.</p>' +
+    '</section>' +
     stats +
     '<div class="sys-pager">' +
       '<a href="system.html?id=' + prev.id + '"><span class="pc-num">&larr; Previous</span><span>' + prev.name + '</span></a>' +
       '<a href="system.html?id=' + next.id + '" class="next"><span class="pc-num">Next &rarr;</span><span>' + next.name + '</span></a>' +
     '</div>';
+
+  function loadScript(src, ok) {
+    var el = document.createElement('script');
+    el.src = src; el.onload = ok; el.onerror = function () {};
+    document.body.appendChild(el);
+  }
+  loadScript('demos/kit.js', function () {
+    loadScript('demos/' + t.id + '.js', function () {
+      var d = window.ICC_DEMOS && window.ICC_DEMOS[t.id];
+      if (!d) return;
+      document.getElementById('demo-intro').textContent = d.intro;
+      document.getElementById('demo-section').hidden = false;
+      d.mount(document.getElementById('demo-body'));
+    });
+  });
 })();
 </script>
 
