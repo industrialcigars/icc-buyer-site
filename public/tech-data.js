@@ -21,6 +21,7 @@ const ICC_TECH = [
       'A monthly PDF brief builds itself on the 1st and is emailed to the team.'
     ],
     replaces: 'The monthly planning session and the manual re-keying of events across tools.',
+    driver: 'Events are what bring members through the door. A themed, consistent calendar creates reliable traffic nights, and every person who comes for an event buys cigars, food and drinks. When planning takes minutes instead of days, the team spends its time running great events instead of organizing them, and the same plan feeds the marketing that fills the room.',
     specialist: 'a part-time programming coordinator',
     hoursPerMonth: 12, rate: 30,
     basis: 'Monthly planning plus re-entering events across the calendar, Notion and the monthly brief.'
@@ -37,6 +38,7 @@ const ICC_TECH = [
       'Managers see progress by person and role, and the same platform tracks the shared-success program.'
     ],
     replaces: 'One-on-one shadowing and manager-led teaching for every new hire.',
+    driver: 'Guests come back, and members stay, because the experience is consistent no matter who is working. Training that gets every new hire to the ICC standard quickly protects the thing members are paying for, and a trained floor sells better: better recommendations, better pairings, a higher average ticket.',
     specialist: 'a part-time trainer or training coordinator',
     hoursPerMonth: 15, rate: 30,
     basis: 'Manager time spent building and delivering training and checking staff off.'
@@ -53,6 +55,7 @@ const ICC_TECH = [
       'No one has to remember it, and no member gets missed.'
     ],
     replaces: 'A recurring administrative task that used to depend on someone remembering to do it.',
+    driver: 'Membership pays for itself only if members actually use it. The monthly credit is a standing reminder to come in, and a member in the lounge buys additional cigars and enjoys food and drinks. Since launching in July it has gone to roughly 110 members every month with no manual work. Marketing drives traffic, traffic drives volume, and the credit is a reason to visit that sends itself on the 1st.',
     specialist: 'a part-time membership administrator',
     hoursPerMonth: 7, rate: 22,
     basis: 'Verifying members, issuing a credit and sending an email for each of roughly 130 members.'
@@ -68,6 +71,7 @@ const ICC_TECH = [
       'Gives the business real usage data on which pairings are actually being enjoyed.'
     ],
     replaces: 'Guesswork about which pairings resonate, and a missed repeat-visit driver.',
+    driver: 'A reason to try the next pairing is a reason to come back. Each stamp is a visit, and each visit is more cigar, food and drink sales. The usage data shows which pairings members actually enjoy, so the menu and the humidor can lean into what works.',
     specialist: null,
     hoursPerMonth: null, rate: 0,
     basis: ''
@@ -84,6 +88,7 @@ const ICC_TECH = [
       'The weekly report goes out by email, with vendor performance, dead-SKU and aged-PO reporting built in.'
     ],
     replaces: 'The weekly buying ritual, from spreadsheet math to hand-built purchase orders.',
+    driver: 'The right cigars on the shelf are sales that happen. Today ICC carries no stock older than 90 days, and stockouts are down significantly. Cash is no longer sitting in boxes that don\'t move, and the items members ask for are on the shelf more often, so the same budget produces more revenue.',
     specialist: 'a part-time buyer or inventory analyst',
     hoursPerMonth: 26, rate: 35,
     basis: 'About 6 hours a week pulling reports, calculating velocity, allocating budget and building purchase orders.'
@@ -100,6 +105,7 @@ const ICC_TECH = [
       'Automated emails thank the member and welcome the guest as a prospect.'
     ],
     replaces: 'Manual counting, overage policing and follow-up emails.',
+    driver: 'Every guest is a potential member, and the program has already brought in a few new ones. It has also helped retain existing members, who value being able to bring people in. And it now captures revenue the lounge was completely losing before: guest fees that used to go uncollected because they depended on someone noticing.',
     specialist: 'a part-time front-desk or membership coordinator',
     hoursPerMonth: 5, rate: 22,
     basis: 'Tracking allotments, chasing overages and sending follow-ups.'
@@ -116,6 +122,7 @@ const ICC_TECH = [
       'Campaign calendar, asset library and email-flow manager, with Klaviyo and Meta performance in the same view.'
     ],
     replaces: 'Hand-building each campaign, and chasing assets and results across tools.',
+    driver: 'Marketing drives traffic, and traffic drives volume. ICC measures it in the room: event attendance, and growth in the specific cigar brands a campaign highlights. The Command Center makes that marketing faster and more consistent, with every confirmed event turned into a multi-channel campaign in the ICC voice.',
     specialist: 'a part-time marketing coordinator',
     hoursPerMonth: 20, rate: 35,
     basis: 'Campaign planning, asset prep, scheduling and approvals.'
@@ -131,6 +138,7 @@ const ICC_TECH = [
       'Rules live in one configuration file, so changing the pricing policy takes one edit, not hundreds.'
     ],
     replaces: 'A manual bar-pricing spreadsheet.',
+    driver: 'Margin protected on every pour is profit that doesn\'t depend on anyone remembering to check. When costs rise, prices follow the policy automatically, and a consistent price structure means members never see odd prices and the bar never quietly loses money on a bottle.',
     specialist: 'a bar manager or beverage analyst',
     hoursPerMonth: 4, rate: 35,
     basis: 'Re-pricing bottles and checking cost changes by hand.'
@@ -149,6 +157,7 @@ const ICC_TECH = [
       'Recipe-level margin is the next layer; until it is in, the dashboard says so rather than faking it.'
     ],
     replaces: 'Assembling sales, labor and void reports by hand each week.',
+    driver: 'Knowing today what used to take weeks changes decisions. Seeing labor, productivity and voids by the day lets the team correct a slow shift or a void problem right away, instead of finding it in a report a month later. Faster decisions are better margins.',
     specialist: 'a part-time bookkeeper or financial analyst',
     hoursPerMonth: 8, rate: 35,
     basis: 'Pulling and reconciling weekly sales, labor and void reports.'
@@ -165,6 +174,7 @@ const ICC_TECH = [
       'When a candidate passes, their training record is created in ICCU automatically.'
     ],
     replaces: 'A form tool, manual scheduling emails and the post-interview hand-offs.',
+    driver: 'A faster, cleaner hiring process means fewer short-staffed shifts and better first impressions for candidates. Every candidate is screened the same way and flows straight into training, so strong people are working the floor sooner and weaker fits are caught earlier.',
     specialist: 'a part-time recruiting coordinator',
     hoursPerMonth: 10, rate: 25,
     basis: 'Scheduling, status emails and hand-offs for each candidate.'
@@ -181,6 +191,7 @@ const ICC_TECH = [
       'A Slack post sends it for review and one-click approval before it goes out.'
     ],
     replaces: 'Hand-building each pairing email, from cigar selection to layout.',
+    driver: 'A twice-weekly, perfectly timed email is a steady reminder to visit. Featuring what members are already buying, alongside fresh bakery items, drives same-day traffic and sells both the cigar and the pastry. It keeps the lounge top of mind without anyone having to build it each time.',
     specialist: 'a part-time email or content coordinator',
     hoursPerMonth: 9, rate: 28,
     basis: 'About an hour per email, twice a week.'

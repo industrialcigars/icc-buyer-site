@@ -85,6 +85,7 @@
       '<p class="sys-assumption">Interactive demo running on invented sample data. No real member, vendor, employee or financial records are shown, and nothing here connects to the live system.</p>' +
     '</section>' +
     stats +
+    (t.driver ? '<section class="sys-section sys-driver"><h3 class="block-title">The driver: why it matters beyond the savings</h3><p>' + t.driver + '</p></section>' : '') +
     '<div class="sys-pager">' +
       '<a href="system.html?id=' + prev.id + '"><span class="pc-num">&larr; Previous</span><span>' + prev.name + '</span></a>' +
       '<a href="system.html?id=' + next.id + '" class="next"><span class="pc-num">Next &rarr;</span><span>' + next.name + '</span></a>' +
