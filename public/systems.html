@@ -36,8 +36,9 @@
       <h2>8 proprietary platforms, already built</h2>
       <p>Every platform below was designed and built in-house for ICC's exact operating model &mdash; none of it was bought off the shelf. A new owner inherits working software, not a rebuild project.</p>
       <div class="asset-stack" style="margin:16px 0 0;">
-        <div class="asset-line"><span class="al-label">Estimated fair-market replacement cost</span><span class="al-value">$120,000&ndash;$477,000</span></div>
+        <div class="asset-line"><span class="al-label">Estimated fair-market replacement cost</span><span class="al-value">Approx. $400,000</span></div>
       </div>
+      <p class="sys-assumption" style="margin:8px 0 0;"><a href="#valuation">See exactly how this is calculated &darr;</a></p>
     </div>
   </div>
 
@@ -51,6 +52,35 @@
   <p style="margin-bottom:20px;">Three more systems sit alongside the eight above and are not counted in the replacement-cost range.</p>
   <div class="tech-grid" id="tech-grid-also"></div>
   <p class="sys-assumption">Hours and dollar figures are modeled estimates of the manual work each system replaces, at an assumed fully-loaded hourly labor cost shown on each system's page. They are not tracked actuals.</p>
+
+  <h3 class="block-title" id="valuation">How the technology is valued</h3>
+  <p>Replacement cost answers one question: what would a new owner pay outside developers to rebuild these eight platforms from scratch? The estimate prices the hours each platform took to build, including its integrations and custom logic, at a blended agency rate. It is a one-time build cost.</p>
+
+  <table class="data">
+    <tr><th>Platform</th><th class="num">Est. hours</th><th class="num">Midpoint</th><th class="num">At $250/hr</th></tr>
+    <tr><td>Programming OS</td><td class="num">150&ndash;250</td><td class="num">200</td><td class="num">$50,000</td></tr><tr><td>ICCU &mdash; ICC Academy</td><td class="num">250&ndash;400</td><td class="num">325</td><td class="num">$81,250</td></tr><tr><td>Member Monthly Credit Cron</td><td class="num">40&ndash;70</td><td class="num">55</td><td class="num">$13,750</td></tr><tr><td>Pairing Passport</td><td class="num">60&ndash;100</td><td class="num">80</td><td class="num">$20,000</td></tr><tr><td>Purchasing / OTB Calculator</td><td class="num">80&ndash;140</td><td class="num">110</td><td class="num">$27,500</td></tr><tr><td>Guest Pass Program</td><td class="num">120&ndash;180</td><td class="num">150</td><td class="num">$37,500</td></tr><tr><td>Marketing Command Center</td><td class="num">200&ndash;350</td><td class="num">275</td><td class="num">$68,750</td></tr><tr><td>Bottle Concierge Pricing Tool</td><td class="num">60&ndash;100</td><td class="num">80</td><td class="num">$20,000</td></tr>
+    <tr><td><strong>Total</strong></td><td class="num"><strong>960&ndash;1,590</strong></td><td class="num"><strong>1,275</strong></td><td class="num"><strong>$318,750</strong></td></tr>
+  </table>
+
+  <div class="asset-stack">
+    <div class="asset-line"><span class="al-label">Development hours, midpoint of 960&ndash;1,590</span><span class="al-value">1,275 hrs</span></div>
+    <div class="asset-line"><span class="al-label">Blended agency rate, midpoint of $200&ndash;$300 an hour, including project management and QA</span><span class="al-value">$250 / hr</span></div>
+    <div class="asset-line"><span class="al-label">Raw development cost (1,275 &times; $250)</span><span class="al-value">$318,750</span></div>
+    <div class="asset-line"><span class="al-label">Discovery and QA overhead an agency typically adds when bundling the work, 20&ndash;30%</span><span class="al-value">+$63,750 to +$95,625</span></div>
+    <div class="asset-line"><span class="al-label">Estimated replacement cost</span><span class="al-value">$382,500&ndash;$414,375</span></div>
+    <div class="asset-line"><span class="al-label"><strong>Stated as</strong></span><span class="al-value">Approx. $400,000</span></div>
+  </div>
+
+  <p><strong>Why an agency basis.</strong> A buyer who doesn't write software would not hire one freelancer to build eight connected platforms. They would commission a single engagement, with discovery, project management and QA included. That is what the figure above prices.</p>
+
+  <p><strong>For reference, the other ways to price it:</strong></p>
+  <ul class="plain">
+    <li>One experienced freelancer ($125&ndash;$175 an hour) at the same 1,275 midpoint hours: 1,275 &times; $150 = $191,250. That is about eight months of full-time work for one person, with no project management or QA behind it.</li>
+    <li>The top of the agency range, 1,590 hours at $300 an hour: $477,000.</li>
+    <li>Scale check: the eight platforms are made up of roughly 60,000 lines of custom code.</li>
+  </ul>
+
+  <p class="sys-assumption">One-time build cost only. Excludes hosting, maintenance and AI/API usage, and excludes the content inside ICCU's training modules and the Marketing Command Center. The three additional systems listed above, and the Membership App in development, are not counted. Bottle Pricing and Marketing Command Center are in final build; the other six are live. Hour estimates reflect each system's scope as built and are benchmarked against comparable custom software engagements.</p>
 
   <h3 class="block-title">Licensed stack in use</h3>
   <p style="margin-bottom:6px;">Best-in-class tools, already licensed and integrated &mdash; nothing here needs to be sourced or set up from scratch.</p>

@@ -167,6 +167,7 @@ p.lede { font-size: 17px; font-family: Georgia, serif; }
 table.data { width: 100%; border-collapse: collapse; font-family: 'Industry Medium', sans-serif; font-size: 14px; margin: 0 0 24px; }
 table.data th, table.data td { text-align: left; padding: 10px; border-bottom: 1px solid var(--icc-border); }
 table.data th { font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--icc-muted); }
+table.data th.num { text-align: right; }
 table.data td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--icc-ink); }
 
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 0 0 24px; }
